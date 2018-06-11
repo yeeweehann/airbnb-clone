@@ -3,8 +3,8 @@ class User < ApplicationRecord
   	
   	def index
   	end
-
-	has_many :authentications, dependent: :destroy, :listing
+  	has_many :listings
+	has_many :authentications, dependent: :destroy
 
 	def self.create_with_auth_and_hash(authentication, auth_hash)
 	    user = self.create!(
