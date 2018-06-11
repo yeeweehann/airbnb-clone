@@ -1,0 +1,9 @@
+<% if signed_in? %>
+	<% if @listing.count == 0 %>
+		<h2>No listing found.</h2>
+	<% else %>
+		<% @listing.each do |listing| %>
+			<%= listing.name %>		
+		<% end %>
+	<% end %>
+<% end %>
