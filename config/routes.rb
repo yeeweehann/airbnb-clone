@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
-  #get "/create_listings" => "listings#new", as: "create_listings"
+  get "/create_listings" => "listings#new", as: "create_listings"
+  post "/listings/:id/verified" => "listings#verified", as: "verify_listing"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

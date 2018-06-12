@@ -17,7 +17,6 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.decimal :price
       t.text :description
       t.integer :user_id
-
       
     end
   end

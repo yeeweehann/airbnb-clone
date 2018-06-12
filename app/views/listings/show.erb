@@ -1,0 +1,20 @@
+<h1><%= @listing.name %></h1>
+
+
+<%= @listing.name %></br>
+<%= @listing.place_type %></br>
+<%= @listing.property_type %></br>
+<%= @listing.room_number %></br>
+<%= @listing.bed_number %></br>
+<%= @listing.guest_number %></br>
+<%= @listing.country %></br>
+<%= @listing.state %></br>
+<%= @listing.city %></br>
+<%= @listing.zipcode %></br>
+<%= @listing.address %></br>
+<%= @listing.price %></br>
+<%= @listing.description %></br>
+
+<%= button_to "Verify", action: "verified" %>
+
+<h2><a href="/listings">Back to listing</a></h2>

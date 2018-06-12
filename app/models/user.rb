@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   	include Clearance::User
+  	enum role: [:customer, :moderator, :superadmin]
   	
   	def index
   	end
@@ -20,6 +21,10 @@ class User < ApplicationRecord
 	def google_token
 		x = self.authentications.find_by(provider: 'google_oauth2')
 		return x.token unless x.nil?
+	end
+
+	def edit
+		@user = current_user
 	end
 
 end

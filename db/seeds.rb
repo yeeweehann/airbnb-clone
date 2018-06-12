@@ -21,7 +21,6 @@ ActiveRecord::Base.transaction do
     user['phone'] = Faker::PhoneNumber.phone_number
     user['country'] = Faker::Address.country
     user['birthdate'] = Faker::Date.between(50.years.ago, Date.today)
-
     User.create(user)
   end
 end 
@@ -45,7 +44,7 @@ ActiveRecord::Base.transaction do
     listing['state'] = Faker::Address.state
     listing['city'] = Faker::Address.city
     listing['zipcode'] = Faker::Address.zip_code
-    listing['location'] = Faker::Address.street_address
+    listing['address'] = Faker::Address.street_address
 
     listing['price'] = rand(80..500)
     listing['description'] = Faker::Hipster.sentence

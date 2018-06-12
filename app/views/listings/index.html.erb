@@ -2,8 +2,15 @@
 	<% if @listing.count == 0 %>
 		<h2>No listing found.</h2>
 	<% else %>
-		<% @listing.each do |listing| %>
-			<%= listing.name %>		
-		<% end %>
+		<%= paginate(@listing) %>
+		<ul>
+			<% @listing.each do |listing| %>
+			<li>
+				<%= listing.name %>
+				<a href="/listings/<%= listing.id %>">View Details</a>
+			</li>
+			<% end %>
+		</ul>		
+		<%= paginate(@listing) %>
 	<% end %>
 <% end %>
